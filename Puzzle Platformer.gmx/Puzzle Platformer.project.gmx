@@ -5,9 +5,49 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_Player</sprite>
+    <sprite>sprites\spr_wall</sprite>
+    <sprites name="Grounds">
+      <sprite>sprites\spr_ground_wood</sprite>
+    </sprites>
+    <sprites name="Walls">
+      <sprite>sprites\spr_wall_wood</sprite>
+    </sprites>
+    <sprites name="Ceilings">
+      <sprite>sprites\spr_ceiling_wood</sprite>
+    </sprites>
+    <sprites name="Objects">
+      <sprite>sprites\spr_box</sprite>
+    </sprites>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\obj_Player</object>
+    <object>objects\obj_wall</object>
+    <objects name="Ground">
+      <object>objects\obj_ground_wood</object>
+    </objects>
+    <objects name="Walls">
+      <object>objects\obj_wall_wood</object>
+    </objects>
+    <objects name="Ceilings">
+      <object>objects\obj_ceiling_wood</object>
+    </objects>
+    <objects name="Objects">
+      <object>objects\obj_box</object>
+    </objects>
+    <objects name="Functions">
+      <object>objects\obj_FullScreen</object>
+      <objects name="Temporary for Testing">
+        <object>objects\obj_extra_controlls</object>
+      </objects>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_test</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
