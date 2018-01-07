@@ -17,6 +17,10 @@
     <sprites name="Ceilings">
       <sprite>sprites\spr_ceiling_wood</sprite>
     </sprites>
+    <sprites name="Stairs">
+      <sprite>sprites\spr_stair_wood_left</sprite>
+      <sprite>sprites\spr_stair_wood_right</sprite>
+    </sprites>
     <sprites name="Objects">
       <sprite>sprites\spr_box</sprite>
     </sprites>
@@ -34,6 +38,11 @@
     </objects>
     <objects name="Ceilings">
       <object>objects\obj_ceiling_wood</object>
+    </objects>
+    <objects name="Stairs">
+      <object>objects\obj_stair_main</object>
+      <object>objects\obj_stair_wood_left</object>
+      <object>objects\obj_stair_wood_right</object>
     </objects>
     <objects name="Objects">
       <object>objects\obj_box</object>
