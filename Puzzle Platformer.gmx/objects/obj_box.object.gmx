@@ -80,8 +80,34 @@ if (place_meeting(x,y+vsp,obj_wall))
 y += vsp;
 
 // Push
-if (place_meeting(x+4,y,obj_Player) &amp;&amp; !place_meeting(x+1,y,obj_wall)) { x -= 4 }
-if (place_meeting(x-4,y,obj_Player) &amp;&amp; !place_meeting(x-1,y,obj_wall)) { x += 4 }
+if (place_meeting(x+1,y,obj_Player) &amp;&amp; !place_meeting(x-1,y,obj_wall))
+{
+ with (obj_Player)
+ {
+
+    if(key_left !=0)
+    {
+        x-=1;
+        continue;
+    }
+    else break;
+ }
+ x-=1;
+}
+if (place_meeting(x-1,y,obj_Player) &amp;&amp; !place_meeting(x+1,y,obj_wall))
+{
+ with (obj_Player)
+ {
+
+    if(key_right !=0)
+    {
+        x+=1;
+        continue;
+    }
+    else break;
+ }
+ x+=1;
+}
 </string>
           </argument>
         </arguments>

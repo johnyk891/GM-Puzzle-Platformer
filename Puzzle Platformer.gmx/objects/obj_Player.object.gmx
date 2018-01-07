@@ -89,6 +89,15 @@ if (place_meeting(x,y+vsp,obj_wall))
     vsp = 0;
 }
 y += vsp;
+//Stairs Collision
+if (place_meeting(x+1,y,obj_stair_main))
+{
+    if (!place_meeting(x,y-5,obj_box))
+    {
+        y-=5;
+        x+=1;
+    }
+}
 
 
 </string>
