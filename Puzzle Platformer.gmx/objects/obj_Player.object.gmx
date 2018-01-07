@@ -31,6 +31,7 @@ hsp = 0;
 vsp = 0;
 jumpspeed = 7;
 movespeed = 4;
+pull = 0;
 </string>
           </argument>
         </arguments>
@@ -57,6 +58,7 @@ movespeed = 4;
 key_right = keyboard_check(ord('D'));
 key_left = -keyboard_check(ord('A'));
 key_jump = keyboard_check_pressed(vk_space);
+key_pull = keyboard_check_released(ord('Q'));
 
 //React to inputs
 move = key_left + key_right;
@@ -98,8 +100,63 @@ if (place_meeting(x+1,y,obj_stair_main))
         x+=1;
     }
 }
+// Pull
+if(key_pull!=0 &amp;&amp; pull == 0 &amp;&amp; distance_to_object(obj_box)&lt;10)
+{
+    box = instance_nearest(x,y,obj_box);
+    pull = 1;
+} 
+else if(key_pull!=0 &amp;&amp; pull==1)
+{
+    pull = 0;
+}
 
-
+if(pull==1&amp;&amp;distance_to_object(box)&gt;60&amp;&amp;distance_to_object(box)&lt;100)
+{
+        movespeed = 1;
+        if(key_right!=0 &amp;&amp; !place_meeting(x+1,y,obj_wall) &amp;&amp; place_meeting(x-200,y,box))
+        {
+            with(box)
+            {
+    
+                x+=1;
+            }
+        }
+        else if(key_left!=0 &amp;&amp; !place_meeting(x-1,y,obj_wall)&amp;&amp; place_meeting(x+200,y,box))
+        {
+            with(box)
+            {
+    
+                x-=1;
+            }
+        }      
+}
+if(pull==0)
+movespeed = 4;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+draw_text(x+10,y-10,pull);
 </string>
           </argument>
         </arguments>
